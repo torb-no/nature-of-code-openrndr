@@ -5,6 +5,13 @@ import org.openrndr.color.ColorRGBa
 import org.openrndr.draw.*
 import org.openrndr.extra.noise.random
 
+/**
+ * Create a random walker that has a tendency to move down and to the right.
+ * (We’ll see the solution to this in the next section.)
+ *
+ * http://natureofcode.com/book/introduction/#intro_exercise1
+ */
+
 class Walker(val drawer: Drawer) {
     var x = drawer.bounds.dimensions.x / 2.0
     var y = drawer.bounds.dimensions.y / 2.0
