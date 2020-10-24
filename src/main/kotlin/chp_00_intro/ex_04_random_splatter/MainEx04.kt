@@ -4,8 +4,10 @@ import org.openrndr.application
 import org.openrndr.color.ColorHSLa
 import org.openrndr.color.ColorRGBa
 import org.openrndr.draw.*
+import org.openrndr.extensions.Screenshots
 import org.openrndr.extra.noise.gaussian
 import org.openrndr.math.Vector2
+import utils.QuitOnEsc
 
 fun main() = application {
     configure {
@@ -14,6 +16,9 @@ fun main() = application {
     }
 
     program {
+        extend(QuitOnEsc())
+        extend(Screenshots())
+
         val rt = renderTarget(width, height) { colorBuffer() }
         drawer.isolatedWithTarget(rt) {
             drawer.clear(ColorRGBa.BLACK)
