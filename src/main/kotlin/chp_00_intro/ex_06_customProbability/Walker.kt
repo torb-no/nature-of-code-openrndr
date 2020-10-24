@@ -1,4 +1,4 @@
-package ex_06_customProbability
+package chp_00_intro.ex_06_customProbability
 
 import org.openrndr.Program
 import org.openrndr.color.ColorRGBa
