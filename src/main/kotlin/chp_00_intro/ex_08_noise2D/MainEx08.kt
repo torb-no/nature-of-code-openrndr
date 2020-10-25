@@ -1,14 +1,11 @@
-package chp_00_intro.ex_04_random_splatter
+package chp_00_intro.ex_08_noise2D
 
 import org.openrndr.application
 import org.openrndr.color.ColorHSLa
-import org.openrndr.color.ColorRGBa
 import org.openrndr.draw.*
 import org.openrndr.extensions.Screenshots
-import org.openrndr.extra.noise.gaussian
 import org.openrndr.extra.noise.perlin
 import org.openrndr.extra.noise.random
-import org.openrndr.math.Vector2
 import org.openrndr.math.map
 import utils.QuitOnEsc
 
