@@ -1,4 +1,4 @@
-package chp_01_vectors.ex_01_rightMover
+package chp_01_vectors.ex_05_rightMover
 
 import org.openrndr.application
 import org.openrndr.extensions.Screenshots

@@ -1,4 +1,4 @@
-package chp_01_vectors.ex_01_rightMover
+package chp_01_vectors.ex_05_rightMover
 
 import org.openrndr.KEY_ARROW_DOWN
 import org.openrndr.KEY_ARROW_UP
