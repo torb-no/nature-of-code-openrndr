@@ -17,8 +17,7 @@ fun main() = application {
         val mover = Mover(this)
 
         extend {
-            mover.update()
-            mover.display()
+            mover.updateAndDisplay()
         }
     }
 }
