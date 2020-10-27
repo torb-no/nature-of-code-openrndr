@@ -4,10 +4,7 @@ import org.openrndr.Program
 import org.openrndr.color.ColorRGBa
 import org.openrndr.math.Vector2
 import org.openrndr.math.clamp
-
-fun Vector2.limit(d: Double) =
-    if (length > d) normalized * d
-    else this
+import utils.limit
 
 class Mover(val program: Program) {
     val drawer = program.drawer
