@@ -19,7 +19,7 @@ class Ball(program: Program) {
             random(0.3, 0.8),
             random(0.3, 0.8),
             random(0.3, 0.8),
-            0.75
+            0.66
     )
 
     fun update() {
