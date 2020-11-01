@@ -13,7 +13,6 @@ class Ball(program: Program) {
     var velocity = Vector2.ZERO
     var acceleration = Vector2.ZERO
 
-    var sumForces = Vector2.ZERO
     val mass = random(1.0, 10.0)
     val color = ColorRGBa(
             random(0.3, 0.8),
@@ -23,11 +22,10 @@ class Ball(program: Program) {
     )
 
     fun update() {
-        acceleration = sumForces / mass
         velocity += acceleration
         position += velocity
 
-        sumForces = Vector2.ZERO
+        acceleration = Vector2.ZERO
     }
 
     fun display() {
@@ -38,6 +36,6 @@ class Ball(program: Program) {
     }
 
     fun applyForce(force: Vector2) {
-        sumForces += force
+        acceleration += (force / mass)
     }
 }
