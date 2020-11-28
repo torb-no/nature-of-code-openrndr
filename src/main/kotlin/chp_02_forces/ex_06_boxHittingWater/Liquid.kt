@@ -12,15 +12,16 @@ class Liquid(
     val drawer = program.drawer
 
     fun process(box: Box) {
-        // TODO
-//        if (area.contains(box.position - box.radiusVec) ||
-//                area.contains(box.position + box.radiusVec)) {
-//
-//            // Apply friction
-//            val dragMagnitude = box.velocity.squaredLength * coefficient
-//            val dragForce = box.velocity.normalized * -dragMagnitude
-//            box.applyForce(dragForce)
-//        }
+        // Maybe take different x and y dragCoeffients into account?
+        // (Currently x dragCoefficient affects all axes)
+
+        if (area.contains(box.position) || area.contains(box.position + box.size)) {
+            // Apply friction
+            val dragCoefficient = box.size.x
+            val dragMagnitude = box.velocity.squaredLength * coefficient * dragCoefficient * 0.01
+            val dragForce = box.velocity.normalized * -dragMagnitude
+            box.applyForce(dragForce)
+        }
     }
 
     fun display() {

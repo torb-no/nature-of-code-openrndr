@@ -9,17 +9,16 @@ import kotlin.math.abs
 
 class Box(
         program: Program,
-        x: Double,
+        var position: Vector2,
+        val size: Vector2,
 ) {
     val drawer = program.drawer
     val dimensions = drawer.bounds.dimensions
 
-    var position = Vector2(x, random(25.0, 300.0))
     var velocity = Vector2.ZERO
     var acceleration = Vector2.ZERO
 
     val mass = 3.0
-//    val radius = mass * 10.0
 
     val color = ColorRGBa(
             random(0.3, 0.8),
@@ -28,9 +27,7 @@ class Box(
             a = 0.66
     )
 
-//    val radiusVec = Vector2(radius, radius)
-//    val minPos = radiusVec
-//    val maxPos = dimensions - minPos
+    val maxPos = dimensions - Vector2(size.x, size.y)
 
     fun update() {
         velocity += acceleration
@@ -53,15 +50,15 @@ class Box(
 //            velocity = velocity.copy(y = abs(velocity.y * bounceForce))
 //        }
 
-        // Never be outside: TODO
-//        position = position.clamp(minPos, maxPos)
+        // Never be outside:
+        position = position.clamp(Vector2.ZERO, maxPos)
     }
 
     fun display() {
         drawer.stroke = ColorRGBa.TRANSPARENT
         drawer.fill = color
 
-//        drawer.circle(position, radius)
+        drawer.rectangle(position, size.x, size.y)
     }
 
     fun applyForce(force: Vector2) {
