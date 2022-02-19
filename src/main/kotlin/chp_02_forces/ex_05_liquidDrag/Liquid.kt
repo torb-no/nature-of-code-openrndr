@@ -13,7 +13,7 @@ class Liquid(
 
     fun process(ball: Ball) {
         if (area.contains(ball.position - ball.radiusVec) ||
-                area.contains(ball.position + ball.radiusVec)) {
+            area.contains(ball.position + ball.radiusVec)) {
 
             // Apply friction
             val dragMagnitude = ball.velocity.squaredLength * coefficient

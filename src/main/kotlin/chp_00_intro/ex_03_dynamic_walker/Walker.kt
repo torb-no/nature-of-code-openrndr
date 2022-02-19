@@ -12,7 +12,8 @@ class Walker(private val program: Program) {
     fun updateAndDraw() {
         val diff = (program.mouse.position - position) * 0.00033
 
-        for (i in 1..15) {
+
+        repeat(15) {
             position += Vector2.uniform(-Vector2.ONE + diff, Vector2.ONE + diff)
 
             drawer.stroke = ColorRGBa.TRANSPARENT

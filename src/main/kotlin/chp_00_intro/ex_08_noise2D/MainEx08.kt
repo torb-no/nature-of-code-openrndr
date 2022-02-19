@@ -23,13 +23,14 @@ fun main() = application {
 
         val cb = colorBuffer(width, height)
 
+
         // Download cb's contents so it's ready to manipulate
         cb.shadow.download()
 
         for (x in 0 until width) {
             for (y in 0 until height) {
                 val hueSat = perlin(seed, x * 0.0022, y * 0.003)
-                val lum = map(0.0, 1.0, 0.25, 1.5, perlin(seed, x * 0.008, y * 0.002))
+                val lum = perlin(seed, x * 0.008, y * 0.002).map(0.0, 1.0, 0.25, 1.5)
                 val color = ColorHSLa(hueSat * 0.001, hueSat * 0.25, lum, 1.0)
                 cb.shadow[x, y] = color.toRGBa()
             }

@@ -4,7 +4,7 @@ import org.openrndr.application
 import org.openrndr.extensions.Screenshots
 import org.openrndr.math.Vector2
 import utils.QuitOnEsc
-import kotlin.math.abs
+import kotlin.math.absoluteValue
 
 fun main() = application {
     configure {
@@ -35,9 +35,9 @@ fun main() = application {
                 // Edge forces
                 val diff = middle - it.position
                 val edgeForce = Vector2(
-                    if (abs(diff.x) > pushThreshold.x) diff.x * edgeMultiplier
+                    if (diff.x.absoluteValue > pushThreshold.x) diff.x * edgeMultiplier
                     else 0.0,
-                    if (abs(diff.y) > pushThreshold.y) diff.y * edgeMultiplier
+                    if (diff.y.absoluteValue > pushThreshold.y) diff.y * edgeMultiplier
                     else 0.0,
                 )
                 it.applyForce(edgeForce)
